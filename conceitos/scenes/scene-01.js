@@ -6,11 +6,19 @@ const material = new THREE.MeshLambertMaterial(
 const cube = new THREE.Mesh(geometry, material);
 
 scene.add(cube);
-cube.rotation.x = 90;
-cube.rotation.y = 90;
+
+x3.add(cube, {
+  label: 'cube'
+});
 
 renderer.setAnimationLoop(() => {
   cube.rotation.x += 0.03;
   cube.rotation.y += 0.02;
+
+  x3.tick();
+  x3.fps(() => {
+    renderer.render
+  });
+
   renderer.render(scene, camera);
 });
