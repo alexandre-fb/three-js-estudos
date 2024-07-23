@@ -38,4 +38,11 @@ x3.add(bola, {
   label: 'bola'
 });
 
-renderer.render(scene, camera);
+renderer.setAnimationLoop(() => {
+  x3.tick();
+  x3.fps(() => {
+    renderer.render;
+  });
+
+  renderer.render(scene, camera);
+});
